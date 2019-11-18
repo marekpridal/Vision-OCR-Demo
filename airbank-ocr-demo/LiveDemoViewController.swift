@@ -12,10 +12,6 @@ import Vision
 
 final class LiveDemoViewController: UIViewController {
     private let session = AVCaptureSession()
-
-    private lazy var imageView: UIImageView = {
-        .init()
-    }()
     
     private lazy var textDetectionRequest: VNRecognizeTextRequest = {
         let request = VNRecognizeTextRequest(completionHandler: self.handleDetectedText)
@@ -44,6 +40,7 @@ final class LiveDemoViewController: UIViewController {
 
         startLiveVideo()
         setupLayout()
+        setupNavigationBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,6 +49,8 @@ final class LiveDemoViewController: UIViewController {
     }
     
     private func setupLayout() {
+        view.backgroundColor = .systemBackground
+        
         cameraOutput.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(cameraOutput)
         cameraOutput.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -96,8 +95,7 @@ final class LiveDemoViewController: UIViewController {
         if let cameraIntrinsicData = CMGetAttachment(sampleBuffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) {
           requestOptions = [.cameraIntrinsics: cameraIntrinsicData]
         }
-        
-        // for orientation see kCGImagePropertyOrientation
+
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: imageBuffer, orientation: .up, options: requestOptions)
         do {
           try imageRequestHandler.perform([textDetectionRequest])
@@ -132,6 +130,17 @@ final class LiveDemoViewController: UIViewController {
                 self?.previewView.drawRect(textObservation: textObservation)
             }
         }
+    }
+    
+    private func setupNavigationBar() {
+        let imageButton = UIBarButtonItem(title: "Hide video", style: .plain, target: self, action: #selector(toggleImageViewHidden))
+        navigationItem.rightBarButtonItem = imageButton
+    }
+    
+    @objc
+    private func toggleImageViewHidden() {
+        cameraOutput.isHidden.toggle()
+        navigationItem.rightBarButtonItem?.title = cameraOutput.isHidden ? "Show video" : "Hide video"
     }
 }
 

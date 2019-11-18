@@ -13,6 +13,7 @@
 		DFAD6E8E2382AABE00FE14F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFAD6E8D2382AABE00FE14F7 /* Assets.xcassets */; };
 		DFAD6E912382AABE00FE14F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFAD6E8F2382AABE00FE14F7 /* LaunchScreen.storyboard */; };
 		DFAD6E992382B59900FE14F7 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD6E982382B59900FE14F7 /* PreviewView.swift */; };
+		DFFAA29A2382D438003F4BCF /* LiveDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFAA2992382D438003F4BCF /* LiveDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DFAD6E902382AABE00FE14F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFAD6E922382AABE00FE14F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFAD6E982382B59900FE14F7 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		DFFAA2992382D438003F4BCF /* LiveDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		DFAD6E832382AABB00FE14F7 /* airbank-ocr-demo */ = {
 			isa = PBXGroup;
 			children = (
+				DFFAA2992382D438003F4BCF /* LiveDemoViewController.swift */,
 				DFAD6E842382AABB00FE14F7 /* AppDelegate.swift */,
 				DFAD6E862382AABB00FE14F7 /* SceneDelegate.swift */,
 				DFAD6E882382AABB00FE14F7 /* ViewController.swift */,
@@ -139,6 +142,7 @@
 			files = (
 				DFAD6E892382AABB00FE14F7 /* ViewController.swift in Sources */,
 				DFAD6E992382B59900FE14F7 /* PreviewView.swift in Sources */,
+				DFFAA29A2382D438003F4BCF /* LiveDemoViewController.swift in Sources */,
 				DFAD6E852382AABB00FE14F7 /* AppDelegate.swift in Sources */,
 				DFAD6E872382AABB00FE14F7 /* SceneDelegate.swift in Sources */,
 			);
