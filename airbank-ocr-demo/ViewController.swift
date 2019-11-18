@@ -11,7 +11,7 @@ import UIKit
 import Vision
 
 final class ViewController: UIViewController {
-    lazy var textDetectionRequest: VNRecognizeTextRequest = {
+    private lazy var textDetectionRequest: VNRecognizeTextRequest = {
         let request = VNRecognizeTextRequest(completionHandler: self.handleDetectedText)
         request.recognitionLevel = .accurate
         request.recognitionLanguages = ["cs_CZ", "en_GB"]
@@ -138,7 +138,7 @@ final class ViewController: UIViewController {
         present(alertController, animated: true)
     }
     
-    func drawVisionRequestResults(_ results: [VNRecognizedTextObservation]) {
+    private func drawVisionRequestResults(_ results: [VNRecognizedTextObservation]) {
         DispatchQueue.main.async { [weak self] in
             self?.previewView.removeMask()
             for textObservation in results {

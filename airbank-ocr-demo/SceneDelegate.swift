@@ -31,6 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let liveDemoNavigationController = UINavigationController()
             liveDemoNavigationController.tabBarItem = UITabBarItem(title: "Live", image: UIImage(systemName: "livephoto"), selectedImage: nil)
+            let liveDemoVC = LiveDemoViewController()
+            liveDemoNavigationController.pushViewController(liveDemoVC, animated: true)
             
             tabBarController.setViewControllers([navigationController, liveDemoNavigationController], animated: true)
         }

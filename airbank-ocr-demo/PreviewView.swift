@@ -107,6 +107,7 @@ class PreviewView: UIView {
         for mask in maskLayer {
             mask.removeFromSuperlayer()
         }
+        subviews.forEach({ $0.removeFromSuperview() })
         maskLayer.removeAll()
     }
     
