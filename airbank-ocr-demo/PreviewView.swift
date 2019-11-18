@@ -92,7 +92,15 @@ class PreviewView: UIView {
         // The coordinates are normalized to the dimensions of the processed image, with the origin at the image's lower-left corner.
         let textBounds = textObservation.boundingBox.applying(translate).applying(transform)
         
-        _ = createLayer(in: textBounds)
+        let layer = createLayer(in: textBounds)
+        
+        let label = UILabel(frame: layer.frame)
+        label.font = .systemFont(ofSize: 8)
+        label.textColor = .systemRed
+        if let topResult = textObservation.topCandidates(1).first {
+            label.text = topResult.string
+        }
+        addSubview(label)
     }
     
     func removeMask() {
