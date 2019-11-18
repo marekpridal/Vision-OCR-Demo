@@ -95,7 +95,7 @@ class PreviewView: UIView {
         let layer = createLayer(in: textBounds)
         
         let label = UILabel(frame: layer.frame)
-        label.font = .systemFont(ofSize: 8)
+        label.font = .systemFont(ofSize: 5)
         label.textColor = .systemRed
         if let topResult = textObservation.topCandidates(1).first {
             label.text = topResult.string

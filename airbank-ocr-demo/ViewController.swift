@@ -41,6 +41,7 @@ final class ViewController: UIViewController {
         
         pickerController.delegate = self
         setupLayout()
+        setupNavigationBar()
     }
     
     private func process(image: UIImage) {
@@ -77,6 +78,8 @@ final class ViewController: UIViewController {
     }
     
     private func setupLayout() {
+        view.backgroundColor = .systemBackground
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)
         imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -143,6 +146,18 @@ final class ViewController: UIViewController {
             }
         }
     }
+    
+    private func setupNavigationBar() {
+        let imageButton = UIBarButtonItem(title: "Hide image", style: .plain, target: self, action: #selector(toggleImageViewHidden))
+        imageButton.isEnabled = false
+        navigationItem.rightBarButtonItem = imageButton
+    }
+    
+    @objc
+    private func toggleImageViewHidden() {
+        imageView.isHidden.toggle()
+        navigationItem.rightBarButtonItem?.title = imageView.isHidden ? "Show image" : "Hide image"
+    }
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -153,6 +168,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
         guard let image = info[.originalImage] as? UIImage else { return }
+        navigationItem.rightBarButtonItem?.isEnabled = true
         imageView.image = image
         process(image: image)
     }
