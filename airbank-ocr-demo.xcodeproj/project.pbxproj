@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF60302223853620009AAFC8 /* RecognizedKeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60302123853620009AAFC8 /* RecognizedKeyValue.swift */; };
 		DFAD6E852382AABB00FE14F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD6E842382AABB00FE14F7 /* AppDelegate.swift */; };
 		DFAD6E872382AABB00FE14F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD6E862382AABB00FE14F7 /* SceneDelegate.swift */; };
 		DFAD6E892382AABB00FE14F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD6E882382AABB00FE14F7 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF60302123853620009AAFC8 /* RecognizedKeyValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedKeyValue.swift; sourceTree = "<group>"; };
 		DFAD6E812382AABB00FE14F7 /* airbank-ocr-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "airbank-ocr-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFAD6E842382AABB00FE14F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFAD6E862382AABB00FE14F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				DFAD6E8D2382AABE00FE14F7 /* Assets.xcassets */,
 				DFAD6E8F2382AABE00FE14F7 /* LaunchScreen.storyboard */,
 				DFAD6E922382AABE00FE14F7 /* Info.plist */,
+				DF60302123853620009AAFC8 /* RecognizedKeyValue.swift */,
 			);
 			path = "airbank-ocr-demo";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				DFAD6E892382AABB00FE14F7 /* ViewController.swift in Sources */,
 				DFAD6E992382B59900FE14F7 /* PreviewView.swift in Sources */,
 				DFFAA29A2382D438003F4BCF /* LiveDemoViewController.swift in Sources */,
+				DF60302223853620009AAFC8 /* RecognizedKeyValue.swift in Sources */,
 				DFAD6E852382AABB00FE14F7 /* AppDelegate.swift in Sources */,
 				DFAD6E872382AABB00FE14F7 /* SceneDelegate.swift in Sources */,
 			);
