@@ -209,8 +209,7 @@ final class LiveDemoViewController: UIViewController {
         var result: [RecognizedKeyValue] = []
         
         RecognizedKeyValue.DocumentElement.allCases.map { $0.rawValue }.forEach { (key) in
-            guard let recognizedTextObservation = recognizedTextObservations.first(where: { $0.topCandidates(10).contains(where: { $0.string.contains(key) }) }), let textObservation = recognizedTextObservation.topCandidates(10).first(where: { $0.string.contains(key) }) else { return }
-            print(textObservation.string)
+            guard let recognizedTextObservation = recognizedTextObservations.first(where: { $0.topCandidates(10).contains(where: { $0.string.contains(key) }) }) else { return }
             var keyValue = RecognizedKeyValue(key: key, keyTextObservation: recognizedTextObservation)
             switch keyValue.alignment {
             case .horizontal:
